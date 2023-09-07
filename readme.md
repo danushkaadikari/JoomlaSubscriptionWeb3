@@ -1,0 +1,18 @@
+# Bogdan's Guides 2023
+## By: Bogdan Khrystosenko
+This project was created to demonstrate how to make a
+content plugin in Joomla 4.
+
+If you found this plugin or the guide useful, please consider leaving me a tip on the site. I'm very much a broke student operating Bogdan's Guides on a $500+ yearly deficit.
+
+It's a simple plugin that interact with smart contaract and Metamask wallet using javascript in a {card}{/card} shortcode to articles. It puts what's in between the codes into Bootstrap cards.
+
+
+
+
+## MIT LICENSE
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Leave the following line as-is -->
+<extension version="4.0" type="plugin" group="system" method="upgrade">
+	<!-- keep format the same, only change the cpayforyou part if needed-->
+	<name>plg_system_cpayforyou</name>
+	<!-- fill these out however you'd like -->
+	<author>Bogdan Khrystosenko</author>
+	<creationDate>6 Sep 2023</creationDate>
+	<copyright>Copyright (C) 2023 Bogdan Khrystosenko - Bogdan's Guides</copyright>
+	<license>MIT</license>
+	<authorEmail>softruth1224@gmail.com</authorEmail>
+	<version>1.0</version>
+	<!-- you can just type something here, but you should really use language constants -->
+	<description>PLG_SYSTEM_CPAYFORYOU_XML_DESCRIPTION</description>
+	<!-- you must put everything here as it is in your directory/installable zip file or it won't install properly-->
+	<files>
+		<!-- the most important file in the plugin, after this file -->
+		<filename plugin="cpayforyou">cpayforyou.php</filename>
+
+		<!-- just some more notes -->
+		<file>cpayforyou.js</file>
+		<file>readme.md</file>
+
+		<!-- the folders, no need to define each file in these folders -->
+		<folder>language</folder>
+	</files>
+	<!-- but you do have to define your language files -->
+	<languages folder="language">
+		<!-- the sys.ini file loads the plugin name/desc on all backend panel pages -->
+		<language tag="en-GB">en-GB/en-GB.plg_system_cpayforyou.sys.ini</language>
+		<!-- the regular .ini file loads the constants that appear in the individual plugin settings itself -->
+		<language tag="en-GB">en-GB/en-GB.plg_system_cpayforyou.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+					name="merchant"
+					type="text"
+					label="Merchant address"
+					default="0x0000000000000000000000000000000000000000"
+				/>
+			</fieldset>
+		</fields>
+	</config>
+</extension>
+
