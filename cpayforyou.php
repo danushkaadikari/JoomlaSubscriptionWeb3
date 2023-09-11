@@ -8,10 +8,16 @@ use Joomla\CMS\Plugin\CMSPlugin;
 use Joomla\CMS\Factory;
 
 $document = JFactory::getDocument();
-$document->addScript( JUri::root() . 'plugins/system/cpayforyou/cpayforyou.js');
-$document->addScript( 'https://cdn.ethers.io/lib/ethers-5.2.umd.min.js');
-$document->addScript( 'https://cdn.tutorialjinni.com/jquery/3.6.1/jquery.min.js');
-$document->addScript( 'https://cdn.tutorialjinni.com/notify/0.4.2/notify.min.js');
+$document->addStyleSheet('https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css');
+$document->addScript('https://cdn.ethers.io/lib/ethers-5.2.umd.min.js');
+$document->addScript('https://cdn.tutorialjinni.com/jquery/3.6.1/jquery.min.js');
+$document->addScript('https://cdn.tutorialjinni.com/notify/0.4.2/notify.min.js');
+$document->addScript('https://unpkg.com/web3@1.2.11/dist/web3.min.js');
+$document->addScript('https://unpkg.com/evm-chains@0.2.0/dist/umd/index.min.js');
+$document->addScript('https://unpkg.com/web3modal@1.9.0/dist/index.js');
+$document->addScript('https://unpkg.com/@walletconnect/web3-provider@1.2.1/dist/umd/index.min.js');
+$document->addScript(JUri::root() . 'plugins/system/cpayforyou/constant.js');
+$document->addScript(JUri::root() . 'plugins/system/cpayforyou/cpayforyou.js');
 
 class PlgSystemCPAYFORYOU extends CMSPlugin
 {
@@ -21,7 +27,8 @@ class PlgSystemCPAYFORYOU extends CMSPlugin
     $doc = Factory::getApplication()->getDocument();
 
     //getting some options from the config
-    $merchant = $this->params->get('merchant');
+    $ethMerchant = $this->params->get('ethMerchant');
+    $bscMerchant = $this->params->get('bscMerchant');
 
     //find each card based on the RegEx within $article->text and store results in $matches array
     preg_match_all('/{merchant.*?\/merchant}/s', $article->text, $matches);
@@ -41,17 +48,21 @@ class PlgSystemCPAYFORYOU extends CMSPlugin
 
       //the title is empty until we prove otherwise
       $title = '';
-    
+
       //generate the output using bootstrap classes and throwing out variables in
       // if ($title == '') {
       //   //make a card div with no title
-        
+
       // } else {
       //   //make a card div with a span title and a card body div, remember to close both divs.
       //   $output = '<div class="card ' . $cardColor . ' text-light"><span class="card-header">' .
       //     $title . '</span><div class="card-body ' . $cardBodyClass . '"><h3>' . $merchant . '</h3>' . $cardBody . '</div></div>';
       // }
-      $output = '<div class="input-group input-group-sm flex-nowrap mb-3"><input id="merchant-address" class="form-control w-100" name="merchant-address" type="text" value="' . $merchant . '" disabled /><span class="input-group-text">Merchant</span></div>';
+      $output = '<div class="input-group input-group-sm flex-nowrap mb-3">
+        <input id="eth-merchant-address" class="form-control w-100" name="merchant-address" type="text" value="' . $ethMerchant . '" disabled />
+        <input id="bsc-merchant-address" class="form-control w-100" name="merchant-address" type="text" value="' . $bscMerchant . '" disabled />
+        <span class="input-group-text">Merchant</span>
+      </div>';
       //replace the original card $value with the new $output in article->text
       $article->text = str_replace($value, $output, $article->text);
     }

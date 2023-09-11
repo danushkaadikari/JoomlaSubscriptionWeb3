@@ -18,6 +18,7 @@
 		<filename plugin="cpayforyou">cpayforyou.php</filename>
 
 		<!-- just some more notes -->
+		<file>constant.js</file>
 		<file>cpayforyou.js</file>
 		<file>readme.md</file>
 
@@ -35,9 +36,17 @@
 		<fields name="params">
 			<fieldset name="basic">
 				<field
-					name="merchant"
+					name="ethMerchant"
 					type="text"
-					label="Merchant address"
+					label="Merchant address - Ethereum"
+					default="0x0000000000000000000000000000000000000000"
+				/>
+			</fieldset>
+			<fieldset name="basic">
+				<field
+					name="bscMerchant"
+					type="text"
+					label="Merchant address - BSC"
 					default="0x0000000000000000000000000000000000000000"
 				/>
 			</fieldset>
