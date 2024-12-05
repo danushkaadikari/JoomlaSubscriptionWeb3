@@ -1,9 +1,3 @@
-# Bogdan's Guides 2023
-## By: Bogdan Khrystosenko
-This project was created to demonstrate how to make a
-content plugin in Joomla 4.
-
-If you found this plugin or the guide useful, please consider leaving me a tip on the site. I'm very much a broke student operating Bogdan's Guides on a $500+ yearly deficit.
 
 It's a simple plugin that interact with smart contaract and Metamask wallet using javascript in a {card}{/card} shortcode to articles. It puts what's in between the codes into Bootstrap cards.
 
